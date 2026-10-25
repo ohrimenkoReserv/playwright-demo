@@ -53,7 +53,14 @@ Requirements: Node.js LTS.
 ```bash
 npm ci
 npx playwright install --with-deps
+cp .env.example .env   # then set the values, see below
 ```
+
+### Environment variables
+
+| Variable | Purpose | Where it is set |
+|----------|---------|-----------------|
+| `TESTOMATIO` | Testomat.io project API key, used to sync test cases and report test runs | Local `.env` (not committed); `TESTOMATIO` repository secret for GitHub Actions |
 
 Run tests:
 
