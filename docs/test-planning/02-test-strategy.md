@@ -131,13 +131,14 @@ The distinction is a classification for planning and reporting. In the code, bot
   expected result. The same case can be run manually or automated.
 - Test cases live in the repository, one file per product module:
   `test-cases/<module>.test.md`. The repository is the source of truth. Testomat.io is kept in
-  sync with `check-tests` (`push` sends cases to Testomat.io, `pull` brings back edits made in its
-  UI). Testomat IDs (`@T…` for cases, `@S…` for suites) are written into the `.md` files.
+  sync with `check-tests`: `npm run tms:push` sends cases to Testomat.io, `npm run tms:pull`
+  brings back edits made in its UI. Testomat IDs (`@T…` for cases, `@S…` for suites) are written
+  into the `.md` files. The format and writing rules are in
+  [`test-cases/README.md`](../../test-cases/README.md).
 
 ```markdown
 <!-- test
-priority: high
-tags: ui, P1, REQ-CART-02
+tags: TC-CART-003, ui, P1, REQ-CART-02
 -->
 ## Changing quantity recalculates line and cart totals
 
@@ -154,8 +155,10 @@ tags: ui, P1, REQ-CART-02
 - Cart total is updated to the new line total.
 ```
 
-- **Case tags:** level (`api`, `ui`, `e2e`), priority (`P1`–`P3`), requirement (`REQ-…`, links the
-  case to the [RTM](03-requirements-traceability-matrix.md)), optionally `smoke`.
+- **Case tags:** test case ID (`TC-…`, the RTM row), level (`api`, `ui`, `e2e`), priority
+  (`P1`–`P3`), requirement (`REQ-…`, links the case to the
+  [RTM](03-requirements-traceability-matrix.md)), optionally `smoke`. Priority is a tag rather
+  than a Testomat.io field until the first push confirms how Testomat.io maps case metadata.
 
 ### Automated tests reference the case by ID
 

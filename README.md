@@ -37,7 +37,7 @@ The schedule and milestones are in the [Test Plan](docs/test-planning/01-test-pl
 
 ```
 docs/test-planning/    test plan, strategy, RTM, risk register, estimation
-test-cases/            test cases in plain language, one .test.md file per module (planned)
+test-cases/            test cases in plain language, one .test.md file per module
 tests/api/<module>/    API tests (planned)
 tests/e2e/<module>/    browser tests: UI feature tests (@ui) and full journeys (@e2e) (planned)
 src/api/               API clients (planned)
@@ -74,15 +74,20 @@ npx playwright show-report            # open the HTML report
 
 ## Test management with Testomat.io
 
-The integration is not set up yet. It is added in E1 (test cases) and E3-1 (automated test
-reporting). The planned workflow: test cases come first, and automation follows.
+Test cases come first, and automation follows. Reporting from automated tests is added in E3-1.
 
 1. **Test case.** A case is written in plain language (preconditions, steps, expected result) in
    `test-cases/<module>.test.md`, and can be run manually or automated. Cases are tagged with
-   level, priority and requirement (`REQ-*`, as in the
-   [RTM](docs/test-planning/03-requirements-traceability-matrix.md)).
-2. **Sync.** The case is pushed to Testomat.io with `check-tests`, which writes its Testomat ID
-   (`@T…`) back into the `.md` file. Edits made in the Testomat.io UI can be pulled back.
+   the RTM test case ID, level, priority and requirement (`REQ-*`, as in the
+   [RTM](docs/test-planning/03-requirements-traceability-matrix.md)). Format and rules:
+   [test-cases/README.md](test-cases/README.md).
+2. **Sync.** Cases are synced with Testomat.io, which writes their Testomat IDs (`@T…`) back into
+   the `.md` files:
+
+   ```bash
+   npm run tms:push   # send cases to Testomat.io and write IDs back
+   npm run tms:pull   # bring back edits made in the Testomat.io UI
+   ```
 3. **Automation.** The Playwright test carries the same ID in its title, so CI results land on the
    same case:
 
