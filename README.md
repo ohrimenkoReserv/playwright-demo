@@ -37,7 +37,7 @@ The schedule and milestones are in the [Test Plan](docs/test-planning/01-test-pl
 
 ```
 docs/test-planning/    test plan, strategy, RTM, risk register, estimation
-test-cases/            test cases in plain language, one .test.md file per module
+test-cases/            test cases in plain language, one .test.md file per test case
 tests/api/<module>/    API tests (planned)
 tests/e2e/<module>/    browser tests: UI feature tests (@ui) and full journeys (@e2e) (planned)
 src/api/               API clients (planned)
@@ -77,9 +77,11 @@ npx playwright show-report            # open the HTML report
 Test cases come first, and automation follows. Reporting from automated tests is added in E3-1.
 
 1. **Test case.** A case is written in plain language (preconditions, steps, expected result) in
-   `test-cases/<module>.test.md`, and can be run manually or automated. Cases are tagged with
-   the RTM test case ID, level, priority and requirement (`REQ-*`, as in the
-   [RTM](docs/test-planning/03-requirements-traceability-matrix.md)). Format and rules:
+   `test-cases/<module>/<test-case-title>.test.md`, and can be run manually or automated. Cases
+   are tagged with the RTM test case ID, level, module, requirement (`REQ-*`, as in the
+   [RTM](docs/test-planning/03-requirements-traceability-matrix.md)), `regression` and optionally
+   `smoke`, and have a priority (`critical` / `normal` / `low` for P1 / P2 / P3). Format and
+   rules:
    [test-cases/README.md](test-cases/README.md).
 2. **Sync.** Cases are synced with Testomat.io, which writes their Testomat IDs (`@T…`) back into
    the `.md` files:

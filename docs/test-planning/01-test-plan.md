@@ -74,9 +74,9 @@ Detailed in the [Test Strategy](02-test-strategy.md):
 - **Own test data:** tests create users, carts and orders through the API. Shared accounts are
   read-only (R-01).
 - **Test cases first, then automation:** each test case is written in plain language
-  (preconditions, steps, expected result) in `test-cases/<module>.test.md` and synced to
-  Testomat.io. A case is automated only after it has a Testomat ID and has been reviewed. The
-  automated test carries the same ID, so results land on the same case.
+  (preconditions, steps, expected result) in `test-cases/<module>/<test-case-title>.test.md` and
+  synced to Testomat.io. A case is automated only after it has a Testomat ID and has been
+  reviewed. The automated test carries the same ID, so results land on the same case.
 - **Build on demand:** framework code (clients, fixtures, Page Objects) is added only when a test
   needs it.
 - **CI:** regression on push and PRs to `main` (P1 required for merge); nightly full run with
@@ -105,7 +105,8 @@ Testing (automation implementation) starts when:
 
 Automating a single test case starts when (Definition of Ready):
 
-- [ ] The case exists in `test-cases/<module>.test.md` with preconditions, steps and expected result.
+- [ ] The case exists in `test-cases/<module>/<test-case-title>.test.md` with preconditions,
+  steps and expected result.
 - [ ] The case has a Testomat ID and has been reviewed.
 
 The environment's reachability from GitHub Actions (R-02) is checked by the first CI run in E3-1.
@@ -196,7 +197,7 @@ responsibilities split in a full team.
 | Deliverable | When | Where |
 |-------------|------|-------|
 | Test Strategy, Test Plan, RTM, Risk Register, Estimation | W0 (done) | `docs/test-planning/` |
-| Test cases (80) | W1 | `test-cases/<module>.test.md`, synced to Testomat.io |
+| Test cases (80) | W1 | `test-cases/<module>/<test-case-title>.test.md`, synced to Testomat.io |
 | Automation framework and test suite | W2 → W5 | `tests/`, `src/` |
 | CI workflows: regression (W2), nightly (W5) | W2, W5 | `.github/workflows/` |
 | Testomat.io project with test cases and run history | W1 → | Testomat.io |

@@ -19,9 +19,9 @@
 - **Suite:** `S` = included in `@smoke`. Every test is also in `@regression`.
 - **Status:** `Planned` → `Automated` → `Passing` / `Failing (DEF-xxx)`. `Deferred` = consciously not
   covered in this release (reason given).
-- **Traceability chain:** REQ → test case in `test-cases/<module>.test.md` (tagged `REQ-…`) →
-  Testomat ID (`@T…`) → automated test with the same ID in its title. Coverage per requirement
-  can be filtered in Testomat.io by the `REQ-*` tag.
+- **Traceability chain:** REQ → test case in `test-cases/<module>/<test-case-title>.test.md`
+  (tagged with its TC ID and `REQ-…`) → Testomat ID (`@T…`) → automated test with the same ID in
+  its title. Coverage per requirement can be filtered in Testomat.io by the `REQ-*` tag.
 
 ---
 

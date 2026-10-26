@@ -129,36 +129,45 @@ The distinction is a classification for planning and reporting. In the code, bot
 
 - A test case describes **what to do, not how to code it**: preconditions, numbered steps and the
   expected result. The same case can be run manually or automated.
-- Test cases live in the repository, one file per product module:
-  `test-cases/<module>.test.md`. The repository is the source of truth. Testomat.io is kept in
-  sync with `check-tests`: `npm run tms:push` sends cases to Testomat.io, `npm run tms:pull`
-  brings back edits made in its UI. Testomat IDs (`@T…` for cases, `@S…` for suites) are written
-  into the `.md` files. The format and writing rules are in
-  [`test-cases/README.md`](../../test-cases/README.md).
+- Test cases live in the repository, one file per test case, grouped in a folder per product
+  module and named after the case title: `test-cases/<module>/<test-case-title>.test.md` (e.g.
+  `auth/Customer logs in with valid credentials via the login form.test.md`). The
+  repository is the source of truth. Testomat.io is kept in sync with `check-tests`:
+  `npm run tms:push` sends cases to Testomat.io, `npm run tms:pull` brings back edits made in its
+  UI. Testomat IDs (`@T…` for cases, `@S…` for suites) are written into the `.md` files. The
+  format and writing rules are in [`test-cases/README.md`](../../test-cases/README.md).
+- **Grouping by tags only.** Each file has a technical suite named like the case, because
+  Testomat.io does not import a case without a suite. Suites carry no meaning: cases are grouped
+  and selected only by tags (the smoke set is every case tagged `smoke`, the UI set every case
+  tagged `ui`, and so on).
 
 ```markdown
 <!-- test
-tags: TC-CART-003, ui, P1, REQ-CART-02
+priority: critical
+tags: TC-CART-003, ui, cart, REQ-CART-02, regression
 -->
 ## Changing quantity recalculates line and cart totals
 
-**Preconditions**
+## Preconditions
+
 - Customer is logged in.
 - Cart contains 1 × "Combination Pliers".
 
-**Steps**
-1. Open the cart page.
-2. Change the quantity of "Combination Pliers" from 1 to 3.
+## Steps
 
-**Expected result**
-- Line total equals unit price × 3.
-- Cart total is updated to the new line total.
+1. Open the cart page.
+*Expected*: The cart shows 1 × "Combination Pliers".
+2. Change the quantity of "Combination Pliers" from 1 to 3.
+*Expected*: The line total equals unit price × 3, and the cart total is updated to the new line total.
 ```
 
-- **Case tags:** test case ID (`TC-…`, the RTM row), level (`api`, `ui`, `e2e`), priority
-  (`P1`–`P3`), requirement (`REQ-…`, links the case to the
-  [RTM](03-requirements-traceability-matrix.md)), optionally `smoke`. Priority is a tag rather
-  than a Testomat.io field until the first push confirms how Testomat.io maps case metadata.
+- **Steps** use the Testomat.io steps format: `## Steps` with a numbered list, and an
+  `*Expected*:` line under each step that has a checkable result.
+- **Case tags:** test case ID (`TC-…`, the RTM row), level (`api`, `ui`, `e2e`), module
+  (`auth`, `cart`, … as the folder name), requirement (`REQ-…`, links the case to the
+  [RTM](03-requirements-traceability-matrix.md)), `regression` (every case), optionally `smoke`.
+- **Priority** is the Testomat.io `priority` field, mapped from the RTM priority: P1 →
+  `critical`, P2 → `normal`, P3 → `low`.
 
 ### Automated tests reference the case by ID
 
@@ -167,8 +176,11 @@ tags: TC-CART-003, ui, P1, REQ-CART-02
 - The automated test carries the **same Testomat ID** in its title, so Testomat.io treats it as
   the same case and attaches run results to it:
   `test('Changing quantity recalculates line and cart totals @T1a2b3c4d @ui @P1', …)`.
-- Run tags in automated test titles (`@api` / `@ui` / `@e2e`, `@P1`–`@P3`, `@smoke`) select
-  suites with `--grep`. The requirement link lives on the case.
+- Run tags in automated test titles (`@api` / `@ui` / `@e2e`, module such as `@auth`,
+  `@regression`, `@smoke`, `@P1`–`@P3`) repeat the case tags and its priority (`critical` →
+  `@P1`, `normal` → `@P2`, `low` → `@P3`). CI selects what to run only by these tags with
+  `--grep` (e.g. the smoke run is `--grep @smoke`: every test tagged `smoke`). The requirement
+  link lives on the case (`REQ-*` tag).
 - **Runs:** CI reports every run to Testomat.io via `@testomatio/reporter` (`TESTOMATIO_TITLE`
   holds the CI run number and branch). Manual runs of not-yet-automated cases are logged in the
   same project.
