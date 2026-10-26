@@ -14,8 +14,8 @@ estimated before any test code was written.
 | Epic | Scope | When | Status |
 |------|-------|------|--------|
 | E0. Test Planning | Test plan, strategy, RTM, risk register, estimation | Oct 19 – 24 | ✅ Done ([docs](docs/test-planning/README.md)) |
-| E1. Test Management Setup | Testomat.io project, test case template, first 2 real test cases | W1 | ⏳ Next |
-| E2. Test Case Design | All 80 test cases written and synced to Testomat.io | W1 | Planned |
+| E1. Test Management Setup | Testomat.io project, test case template, first 2 real test cases | W1 | ✅ Done ([test cases](test-cases/README.md)) |
+| E2. Test Case Design | All 80 test cases written and synced to Testomat.io | W1 | ⏳ In progress |
 | E3. Automation Framework & Release 1 | First UI + API test, CI regression, Testomat.io reporting; 24 P1 cases gating PRs | W2 – W3 | Planned |
 | E4. Regression Automation | 50 P2/P3 functional cases | W3 – W4 | Planned |
 | E5. Non-functional & Stabilization | NFR cases, nightly cross-browser run, flaky tests, `with-bugs` run | W5 | Planned |
