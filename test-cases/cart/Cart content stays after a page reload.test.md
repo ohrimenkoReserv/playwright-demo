@@ -1,8 +1,10 @@
 <!-- suite
+id: @Sdda2689d
 -->
 # Cart content stays after a page reload
 
 <!-- test
+id: @T8e7f8a83
 priority: low
 tags: TC-CART-007, ui, cart, REQ-CART-04, regression
 -->

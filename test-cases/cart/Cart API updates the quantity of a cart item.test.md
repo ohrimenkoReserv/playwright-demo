@@ -1,8 +1,10 @@
 <!-- suite
+id: @Sfcdd3e5c
 -->
 # Cart API updates the quantity of a cart item
 
 <!-- test
+id: @T05d2a1b6
 priority: critical
 tags: TC-CART-004, api, cart, REQ-CART-02, regression
 -->
@@ -10,7 +12,7 @@ tags: TC-CART-004, api, cart, REQ-CART-02, regression
 
 ## Preconditions
 
-- Product P is ordinary in-stock products (not rentals, not "Thor Hammer", CO2 rating C, D or E), so no cart or invoice discount applies.
+- Product P is an ordinary in-stock product (not a rental, not "Thor Hammer", CO2 rating C, D or E), so no cart or invoice discount applies.
 - A cart is created via the API (`POST /carts`) and contains 1 × P.
 
 ## Steps

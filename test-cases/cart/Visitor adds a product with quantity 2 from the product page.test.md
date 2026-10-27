@@ -1,8 +1,10 @@
 <!-- suite
+id: @Sea2cd899
 -->
 # Visitor adds a product with quantity 2 from the product page
 
 <!-- test
+id: @T62946717
 priority: critical
 tags: TC-CART-001, ui, cart, REQ-CART-01, regression, smoke
 -->
@@ -11,7 +13,7 @@ tags: TC-CART-001, ui, cart, REQ-CART-01, regression, smoke
 ## Preconditions
 
 - A new browser session: no customer is logged in and the cart is empty.
-- Product P is ordinary in-stock products (not rentals, not "Thor Hammer", CO2 rating C, D or E), so no cart or invoice discount applies.
+- Product P is an ordinary in-stock product (not a rental, not "Thor Hammer", CO2 rating C, D or E), so no cart or invoice discount applies.
 
 ## Steps
 

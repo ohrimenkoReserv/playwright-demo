@@ -1,8 +1,10 @@
 <!-- suite
+id: @Sc8b509e1
 -->
 # Changing the quantity in the cart recalculates line and cart totals
 
 <!-- test
+id: @T9d2ce335
 priority: critical
 tags: TC-CART-003, ui, cart, REQ-CART-02, regression
 -->
@@ -11,7 +13,7 @@ tags: TC-CART-003, ui, cart, REQ-CART-02, regression
 ## Preconditions
 
 - A new browser session: no customer is logged in and the cart is empty.
-- Product P is ordinary in-stock products (not rentals, not "Thor Hammer", CO2 rating C, D or E), so no cart or invoice discount applies.
+- Product P is an ordinary in-stock product (not a rental, not "Thor Hammer", CO2 rating C, D or E), so no cart or invoice discount applies.
 - The cart contains 1 × P (added from the product page) and the cart page is open.
 
 ## Steps

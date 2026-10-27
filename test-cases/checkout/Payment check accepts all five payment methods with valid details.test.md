@@ -1,8 +1,10 @@
 <!-- suite
+id: @S446e4824
 -->
 # Payment check accepts all five payment methods with valid details
 
 <!-- test
+id: @Tf70af8fc
 priority: critical
 tags: TC-CHK-005, api, checkout, REQ-CHK-04, regression, smoke
 -->

@@ -1,8 +1,10 @@
 <!-- suite
+id: @S2739669b
 -->
 # Invoice total equals the sum of its line totals
 
 <!-- test
+id: @T0afad53d
 priority: critical
 tags: TC-CHK-008, api, checkout, REQ-CHK-06, regression
 -->

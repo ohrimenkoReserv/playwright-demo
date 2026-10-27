@@ -1,8 +1,10 @@
 <!-- suite
+id: @S2c70945a
 -->
 # Invoices API returns only the customer's own invoices
 
 <!-- test
+id: @T83fbb4d3
 priority: normal
 tags: TC-INV-002, api, invoices, REQ-INV-01, regression
 -->

@@ -1,8 +1,10 @@
 <!-- suite
+id: @S5d98b065
 -->
 # Payment check rejects invalid payment details
 
 <!-- test
+id: @Td45ad254
 priority: critical
 tags: TC-CHK-007, api, checkout, REQ-CHK-05, regression
 -->

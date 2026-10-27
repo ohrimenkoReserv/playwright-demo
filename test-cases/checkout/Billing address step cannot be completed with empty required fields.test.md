@@ -1,8 +1,10 @@
 <!-- suite
+id: @Sa25be6f8
 -->
 # Billing address step cannot be completed with empty required fields
 
 <!-- test
+id: @Te0299e9e
 priority: normal
 tags: TC-CHK-004, ui, checkout, REQ-CHK-03, regression
 -->
@@ -11,7 +13,7 @@ tags: TC-CHK-004, ui, checkout, REQ-CHK-03, regression
 ## Preconditions
 
 - A new browser session: no customer is logged in and the cart is empty.
-- Product P is ordinary in-stock products (not rentals, not "Thor Hammer", CO2 rating C, D or E), so no cart or invoice discount applies.
+- Product P is an ordinary in-stock product (not a rental, not "Thor Hammer", CO2 rating C, D or E), so no cart or invoice discount applies.
 - The cart contains 1 × P, the guest details are entered on the sign-in step, and the "Billing Address" step is open.
 
 ## Steps

@@ -1,8 +1,10 @@
 <!-- suite
+id: @S76122373
 -->
 # Registered customer completes checkout and sees the invoice in My invoices
 
 <!-- test
+id: @Tc1b0cf2f
 priority: critical
 tags: TC-CHK-001, e2e, checkout, REQ-CHK-01, regression, smoke
 -->

@@ -1,8 +1,10 @@
 <!-- suite
+id: @Sdd02c960
 -->
 # Postcode lookup returns an address for a valid postal code
 
 <!-- test
+id: @T8e491e82
 priority: low
 tags: TC-CHK-009, api, checkout, REQ-CHK-07, regression
 -->

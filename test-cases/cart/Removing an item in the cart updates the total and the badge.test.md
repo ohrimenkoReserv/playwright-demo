@@ -1,8 +1,10 @@
 <!-- suite
+id: @S6db920b3
 -->
 # Removing an item in the cart updates the total and the badge
 
 <!-- test
+id: @Tdf180112
 priority: normal
 tags: TC-CART-005, ui, cart, REQ-CART-03, regression
 -->

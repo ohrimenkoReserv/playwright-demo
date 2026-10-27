@@ -1,8 +1,10 @@
 <!-- suite
+id: @S2c9a204a
 -->
 # Cart API adds a product to a new cart
 
 <!-- test
+id: @Tdb80f33a
 priority: critical
 tags: TC-CART-002, api, cart, REQ-CART-01, regression, smoke
 -->
@@ -10,7 +12,7 @@ tags: TC-CART-002, api, cart, REQ-CART-01, regression, smoke
 
 ## Preconditions
 
-- Product P is ordinary in-stock products (not rentals, not "Thor Hammer", CO2 rating C, D or E), so no cart or invoice discount applies.
+- Product P is an ordinary in-stock product (not a rental, not "Thor Hammer", CO2 rating C, D or E), so no cart or invoice discount applies.
 
 ## Steps
 

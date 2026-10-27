@@ -1,8 +1,10 @@
 <!-- suite
+id: @Sac301b7f
 -->
 # Guest invoice API creates an invoice for valid data and rejects invalid data
 
 <!-- test
+id: @T9f2fc6e8
 priority: critical
 tags: TC-CHK-003, api, checkout, REQ-CHK-02, regression
 -->
@@ -10,7 +12,7 @@ tags: TC-CHK-003, api, checkout, REQ-CHK-02, regression
 
 ## Preconditions
 
-- Product P is ordinary in-stock products (not rentals, not "Thor Hammer", CO2 rating C, D or E), so no cart or invoice discount applies.
+- Product P is an ordinary in-stock product (not a rental, not "Thor Hammer", CO2 rating C, D or E), so no cart or invoice discount applies.
 - Each request uses its own cart, created via the API with 1 × P.
 - Billing address: a country and a postal code valid for it, with `street`, `city` and `state` taken from `GET /postcode-lookup` for that country and postal code (the API rejects a city or state that does not belong to the postal code).
 - No access token is sent.

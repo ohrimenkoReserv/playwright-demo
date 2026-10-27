@@ -1,8 +1,10 @@
 <!-- suite
+id: @Sc9f92247
 -->
 # Cart API removes one item and keeps the others
 
 <!-- test
+id: @T9944bcd5
 priority: normal
 tags: TC-CART-006, api, cart, REQ-CART-03, regression
 -->

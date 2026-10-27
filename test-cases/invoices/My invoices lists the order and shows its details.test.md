@@ -1,8 +1,10 @@
 <!-- suite
+id: @S8ec50360
 -->
 # My invoices lists the order and shows its details
 
 <!-- test
+id: @T48e84503
 priority: normal
 tags: TC-INV-001, ui, invoices, REQ-INV-01, regression
 -->
@@ -11,7 +13,7 @@ tags: TC-INV-001, ui, invoices, REQ-INV-01, regression
 ## Preconditions
 
 - A new customer account is registered via the API (`POST /users/register`) with a unique email and a unique valid password.
-- Product P is ordinary in-stock products (not rentals, not "Thor Hammer", CO2 rating C, D or E), so no cart or invoice discount applies.
+- Product P is an ordinary in-stock product (not a rental, not "Thor Hammer", CO2 rating C, D or E), so no cart or invoice discount applies.
 - The customer has one invoice for 1 × P, paid by "Cash on Delivery" (created via the API or a checkout).
 - The customer is logged in via the login form.
 

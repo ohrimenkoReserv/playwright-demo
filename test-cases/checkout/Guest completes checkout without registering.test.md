@@ -1,8 +1,10 @@
 <!-- suite
+id: @S268e59a7
 -->
 # Guest completes checkout without registering
 
 <!-- test
+id: @Tc0ce126d
 priority: critical
 tags: TC-CHK-002, e2e, checkout, REQ-CHK-02, regression
 -->
@@ -11,7 +13,7 @@ tags: TC-CHK-002, e2e, checkout, REQ-CHK-02, regression
 ## Preconditions
 
 - A new browser session: no customer is logged in and the cart is empty.
-- Product P is ordinary in-stock products (not rentals, not "Thor Hammer", CO2 rating C, D or E), so no cart or invoice discount applies.
+- Product P is an ordinary in-stock product (not a rental, not "Thor Hammer", CO2 rating C, D or E), so no cart or invoice discount applies.
 - Test data: a guest first name, last name and a unique email.
 
 ## Steps
